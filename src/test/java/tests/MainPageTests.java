@@ -36,6 +36,20 @@ public class MainPageTests {
         FramesPage framesPage = new FramesPage();
         framesPage.clickOnNestedFrameBtn();
         NestedFramesPage nestedFramesPage = new NestedFramesPage();
+        nestedFramesPage.switchToTopFrame();
         nestedFramesPage.switchToLeftFrame();
+    }
+
+    @Test
+    public void testThree() {
+        TheInternetMainPage theInternetMainPage = new TheInternetMainPage();
+        theInternetMainPage.clickOnJSAlerts();
+        AlertsPage alertsPage = new AlertsPage();
+        alertsPage.clickOnJsAlert();
+        Assert.assertEquals(alertsPage.getResult(),"You successfully clicked an alert","Надписи не одинаковы");
+        alertsPage.clickOnJsConfirm();
+        Assert.assertEquals(alertsPage.getResult(),"You clicked: Cancel","Надписи не одинаковы");
+        alertsPage.clickOnJsPrompt();
+        Assert.assertEquals(alertsPage.getResult(),"You entered: Hello","Надписи не одинаковы");
     }
 }

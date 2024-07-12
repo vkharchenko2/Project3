@@ -9,6 +9,7 @@ public class TheInternetMainPage {
 
     private WebElement btnMultipleWindows = DriverUtils.getDriver().findElement(By.xpath("//a[@href=\"/windows\"]"));
     private WebElement btnFrames = DriverUtils.getDriver().findElement(By.xpath("//a[@href=\"/frames\"]"));
+    private WebElement btnJSAlerts = DriverUtils.getDriver().findElement(By.xpath("//a[@href=\"/javascript_alerts\"]"));
 
     public void clickOnMultipleWindowsBtn() {
         btnMultipleWindows.click();
@@ -16,6 +17,10 @@ public class TheInternetMainPage {
 
     public void clickOnFramesBtn(){
         btnFrames.click();
+    }
+
+    public void clickOnJSAlerts(){
+        btnJSAlerts.click();
     }
 }
 
